@@ -78,7 +78,7 @@ namespace UnityEditor.Rendering.Universal
 
             public static GUIContent[] displayedDepthTextureOverride =
             {
-                new GUIContent("On (Forced due to Post Processing)"),
+                new GUIContent("On (Forced due to f****** Post Processing)"),
             };
 
             public static int[] additionalDataOptions = Enum.GetValues(typeof(CameraOverrideOption)).Cast<int>().ToArray();
@@ -927,6 +927,7 @@ namespace UnityEditor.Rendering.Universal
             // Need to check if post processing is added and active.
             // If it is we will set the int pop to be 1 which is ON and gray it out
             bool defaultDrawOfDepthTextureUI = true;
+            /*
             var propValue = (int)selectedDepthOption;
             if ((propValue == 2 && !m_UniversalRenderPipeline.supportsCameraDepthTexture) || propValue == 0)
             {
@@ -935,6 +936,7 @@ namespace UnityEditor.Rendering.Universal
                 EditorGUI.EndDisabledGroup();
                 defaultDrawOfDepthTextureUI = false;
             }
+            */
 
             if(defaultDrawOfDepthTextureUI)
             {

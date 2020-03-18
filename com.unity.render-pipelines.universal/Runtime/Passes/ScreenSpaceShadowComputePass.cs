@@ -1,5 +1,5 @@
 using UnityEngine.Experimental.Rendering;
-using UnityEngine.Experimental.VoxelizedShadows;
+//using UnityEngine.Experimental.VoxelizedShadows;
 
 namespace UnityEngine.Rendering.Universal.Internal
 {
@@ -41,7 +41,7 @@ namespace UnityEngine.Rendering.Universal.Internal
         private const int kDepthBufferBits = 32;
         private const string k_CollectShadowsTag = "Collect Shadows";
 
-        public static DirectionalVxShadowMap MainDirVxShadowMap = null;
+        //public static DirectionalVxShadowMap MainDirVxShadowMap = null;
 
         public ScreenSpaceShadowComputePass(RenderPassEvent evt, ComputeShader screenSpaceVxShadowCS)
         {
@@ -166,6 +166,7 @@ namespace UnityEngine.Rendering.Universal.Internal
 
         private void SetupMainLightVxShadowReceiverConstants(CommandBuffer cmd, int kernel, Camera camera, Light light, bool softShadows)
         {
+            /*
             float screenSizeX = (float)camera.pixelWidth;
             float screenSizeY = (float)camera.pixelHeight;
             float invScreenSizeX = 1.0f / screenSizeX;
@@ -201,6 +202,7 @@ namespace UnityEngine.Rendering.Universal.Internal
 
             cmd.SetComputeBufferParam(_screenSpaceVxShadowCS, kernel, ShaderIDs._VxShadowMapsBuffer, vxShadowMapsBuffer);
             cmd.SetComputeTextureParam(_screenSpaceVxShadowCS, kernel, ShaderIDs._ScreenSpaceShadowOutput, screenSpaceShadowOutputId);
+            */
         }
 
         public void SetMainLightDyanmicShadowReceiverConstants(CommandBuffer cmd, Camera camera, VisibleLight shadowLight, ShadowData shadowData, bool softShadows)
@@ -252,6 +254,8 @@ namespace UnityEngine.Rendering.Universal.Internal
 
         public static bool ComputeShadowsInScreenSpace(ref RenderingData renderingData)
         {
+            return false;
+            /*
             if (VxShadowMapsManager.Instance.Container == null)
                 return false;
 
@@ -277,6 +281,7 @@ namespace UnityEngine.Rendering.Universal.Internal
             MainDirVxShadowMap = dirVxShadowMap;
 
             return dirVxShadowMap != null ? true : false;
+            */
         }
     }
 }
