@@ -29,6 +29,7 @@ Use the following keyboard shortcuts to cut, copy, paste, and duplicate Sticky N
 * **Paste**: Ctrl+V
 * **Duplicate**: Ctrl+D
 
+<a name="context-menu"> </a>
 ### Context menu
 
 To open the context menu for a Sticky Note, right-click anywhere on it. The options in the context menu are as follows.
